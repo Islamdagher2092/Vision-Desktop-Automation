@@ -1,0 +1,14 @@
+[project]
+name = "vision-desktop-automation"
+version = "0.1.0"
+description = "Vision-Based Desktop Automation with Dynamic Icon Grounding"
+requires-python = ">=3.10"
+dependencies = [
+    "pyautogui>=0.9.54",
+    "easyocr>=1.7.1",
+    "opencv-python>=4.8.0",
+    "mss>=9.0.1",
+    "requests>=2.31.0",
+    "pygetwindow>=0.0.9",
+    "pyperclip>=1.8.2"
+]
