@@ -7,7 +7,7 @@ import pyperclip
 from grounder import IconGrounder
 
 # إعدادات عامة
-API_URL = "https://jsonplaceholder.typicode.com/posts"
+API_URL = "https://dummyjson.com/posts"  # <-- التعديل الأول: رابط الـ API الجديد
 TARGET_DIR = os.path.join(os.path.expanduser("~"), "Desktop", "tjm-project")
 
 # إعداد المجلد الهدف
@@ -21,7 +21,10 @@ def fetch_posts(limit=10):
         headers = {'User-Agent': 'Mozilla/5.0'}
         response = requests.get(API_URL, headers=headers, timeout=15)
         response.raise_for_status()
-        return response.json()[:limit]
+        
+        # <-- التعديل الثاني: استخراج القائمة من داخل المفتاح 'posts'
+        return response.json()['posts'][:limit] 
+        
     except requests.RequestException as e:
         print(f"\n[Warning] Error fetching API: {e}")
         print("[Info] API is unavailable. Initiating Graceful Degradation using local dummy data...\n")
