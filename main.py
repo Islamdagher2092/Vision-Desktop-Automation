@@ -104,7 +104,7 @@ def main():
     print("Starting Vision-Based Desktop Automation...")
     grounder = IconGrounder()
     
-    posts = fetch_posts(limit=3)
+    posts = fetch_posts(limit=10)
     if not posts:
         print("No posts to process. Exiting.")
         return
